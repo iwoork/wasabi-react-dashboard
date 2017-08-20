@@ -11,7 +11,7 @@ class App extends React.Component {
         return (
             <div className="wrapper">
                 <AppBar
-                    title="Bucket"
+                    title="Wasabi Admin UI"
                     iconClassNameRight="muidocs-icon-navigation-expand-more"
                     onLeftIconButtonTouchTap={() => {actions.toggleDrawer(app.drawer);}}
                 />
@@ -20,8 +20,12 @@ class App extends React.Component {
                     docked={false}
                     onRequestChange={() => {actions.toggleDrawer(app.drawer);}}
                 >
-                    <MenuItem onTouchTap={() => {}}>Menu Item</MenuItem>
-                    <MenuItem onTouchTap={() => {}}>Menu Item 2</MenuItem>
+                    <MenuItem onTouchTap={() => {}}>Experiments</MenuItem>
+                    <MenuItem onTouchTap={() => {}}>Priority</MenuItem>
+                    <MenuItem onTouchTap={() => {}}>Users</MenuItem>
+                    <MenuItem onTouchTap={() => {}}>Applications</MenuItem>
+                    <MenuItem onTouchTap={() => {}}>Plugins</MenuItem>
+                    <MenuItem onTouchTap={() => {}}>Tools</MenuItem>
                 </Drawer>
                 <div className="main">
                     {this.props.children}
