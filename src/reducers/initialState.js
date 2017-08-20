@@ -1,5 +1,9 @@
 export default {
     app: {
-        drawer: false
+        drawer: false,
+        modal: {
+            open: false,
+            actions: []
+        }
     }
 };

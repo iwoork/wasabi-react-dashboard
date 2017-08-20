@@ -1,5 +1,6 @@
 import {
     TOGGLE_DRAWER,
+    OPEN_MODAL,
     EXPERIMENTS_REQUEST,
     EXPERIMENTS_SUCCESS,
     EXPERIMENTS_FAILURE
@@ -11,6 +12,15 @@ export function toggleDrawer(action){
         dispatch({
             type: TOGGLE_DRAWER,
             payload: action
+        });
+    };
+}
+
+export function openModal(modal){
+    return (dispatch) => {
+        dispatch({
+            type: OPEN_MODAL,
+            payload: modal
         });
     };
 }
@@ -27,5 +37,5 @@ export function getExperiments() {
                 EXPERIMENTS_FAILURE
             ]
         }
-    };
+    }
 }

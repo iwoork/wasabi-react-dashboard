@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators} from 'redux';
 import * as actions from '../../actions/actions';
-import { RaisedButton } from 'material-ui';
+import { RaisedButton, FlatButton, Dialog } from 'material-ui';
 import TableView from '../../components/TableView';
+import ExperimentForm from '../../components/ExperimentForm';
 
 class Experiments extends React.Component {
     constructor(props){
@@ -72,9 +73,20 @@ class Experiments extends React.Component {
           ]
         };
 
+        const modal = {
+            open: true,
+        }
+        const { app, actions } = this.props;
         return (
             <div>
-                <RaisedButton label="Create Experiment" primary={true} />
+                <RaisedButton label="Create Experiment" primary={true}  onClick={()=>{actions.openModal(modal)}}/>
+                <Dialog
+                    title="Create experiment"
+                    modal={false}
+                    open={app.modal.open}
+                >
+                    <ExperimentForm />
+                </Dialog>
                 <TableView headers={headers} data={this.formatTable(apidata)} />
             </div>
         );
